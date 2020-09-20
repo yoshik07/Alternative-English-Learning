@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta http-equiv="content-type"
+    content="text/html; charset=UTF-8">
+<title><%= title %></title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<% console.log('line10 at login.ejs') %>
+<body>
+    <head>
+        <h1><%= title %></h1>
+    </head>
+    <div role="main">
+    <div id="login_form">
+
+        <form method="post" action="/login">
+        <p><input class="login_type" type="text" name="name"
+                value="<%= form.name %>" placeholder=" NAME"></p>
+        <p><input class="login_type" type="password" name="password"
+                value="<%= form.password %>" placeholder=" PASSWORD"></p>
+        <br>
+        <p><input id="login_submit" type="submit" value="LOGIN"></p>
+    </form>        
+    </div>
+        <p><a href="/">&lt;&lt; Topへ戻る</a> 
+    </div>
+</body>
+
+</html>

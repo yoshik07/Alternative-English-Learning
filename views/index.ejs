@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<% console.log("line 4") %>
+  <head>
+    <meta http-equiv="content-type"
+        content="text/html; charset=UTF-8">
+        <title>Test</title>
+        <!-- <title><%= title %></title> -->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+    <h1>Test</h1>
+    <header class="page-header">
+      <h1><img class="logo" src="logo.png" alt="しろたん"><h1>
+    </header>
+    <h2>Welcome to <%= login.name %>.</h2>
+    <form>
+      <select id="url">
+        <% for(var i in collection) { %>
+        <option value="<%= collection[i].attributes.video %>">
+       <%= collection[i].attributes.id + '.' + collection[i].attributes.name %>
+       </option>
+       <% } %> 
+      </select> 
+    </form>
+
+    <!-- <% if (collection[i] != null){ %> -->
+
+   <input type="button" value="動画を選択" onClick="clickVideoURL()"/> 
+
+    <h2>Repeat after the audio below.</h2>
+
+    <iframe id="youtube" width="560" src="https://www.youtube.com/embed/tihmQmPqSdM" height="315"  frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  
+
+    <form method="post" action="/" name="answer_form">
+    <textarea name="<%= url2 %>" placeholder="Write you answer here." ></textarea>
+    <br/>
+    <input type="submit" id="submit_01" value="SUBMIT">
+    </form>
+
+    <br>
+
+    <p><%- form.url2 %></p>
+    <br>
+    <p><%= videodata.attributes.correct %>/p>
+    <br>
+
+    <br>
+    <a href="yoshikad07@gmail.com">わからないことはかどさんまで聞いてね</a>
+
+  </body>
+
+  <footer>
+    <p>Copyright 2020 Yoshi</p>
+  </footer>
+</html> 

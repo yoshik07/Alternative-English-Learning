@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<% console.log("line 3 at index2.ejs") %>
+  <head>
+    <meta http-equiv="content-type"
+        content="text/html; charset=UTF-8">
+        <title>Test</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="index.js"></script>
+
+  </head>
+  
+  <header class="page-header">
+    <h1><img class="logo" src="logo.png" alt="しろたん"><h1>
+  </header>
+
+  <body>
+    <h2>Welcome to <%= login.name %>.</h2>
+    <form>
+      <select id="selected_url">
+        <% for(var i in collection) { %>
+        <option value="<%= collection[i].attributes.video %>">
+       <%= collection[i].attributes.id + '.' + collection[i].attributes.name %>
+       </option>
+       <% } %> 
+      </select>
+      <input  id="button_test" type="button" value="動画を選択" />  
+    </form>
+
+      <h2>Repeat after the audio below.</h2>
+
+      <iframe id="youtube" width="560" src="https://www.youtube.com/embed/tihmQmPqSdM" height="315"  frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br/>
+        <br/>
+        <form method="post" action="/" name="answer_form">
+        <textarea id="your_answer" name="<%= textarea %>" 
+         placeholder="Write you answer here." ></textarea>
+        <br/>
+        <br/>
+        <input type="button" onclick="submit();" id="submit_01" value="SUBMIT">  
+      </form>      
+  
+
+
+  <script>
+      var test = document.getElementById("button_test")
+      console.log(test)
+      test.addEventListener("click", function(){
+        var selected_url = document.getElementById("selected_url").value;
+        console.log(selected_url);
+        document.getElementById("youtube").src = selected_url;
+        document.getElementById("your_answer").name = selected_url;
+      }, false)
+    </script>
+
+
+
+    
+
+  </body>
+
+  <footer> 
+    <p>Copyright 2020 Yoshi</p>
+  </footer>
+
+</html>
