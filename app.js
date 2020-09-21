@@ -7,6 +7,10 @@ var session = require('express-session');
 var validator = require('express-validator');
 
 
+// Heroku Settigns
+app.listen(process.env.PORT);
+
+
 // Document Object
 var jsdom = require('jsdom');
 var { JSDOM } = jsdom;
