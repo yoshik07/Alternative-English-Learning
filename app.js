@@ -7,8 +7,7 @@ var session = require('express-session');
 var validator = require('express-validator');
 
 
-// Heroku Settigns
-app.listen(process.env.PORT || 3000);
+
 
 
 // Document Object
@@ -43,6 +42,10 @@ var createError = require('http-errors');
 
 
 var app = express();
+
+
+// Heroku Settigns
+app.listen(process.env.PORT || 3000);
 
 
 // view engine setup
