@@ -8,7 +8,7 @@ var validator = require('express-validator');
 
 
 // Heroku Settigns
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000);
 
 
 // Document Object
