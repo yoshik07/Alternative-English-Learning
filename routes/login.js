@@ -1,16 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-var mysql = require('mysql');
+var pg = require('pg');
 
 var knex = require('knex')({
-    dialect: 'mysql',
+    dialect: 'pg',
     connection: {
-        host: '192.168.64.2',
-        user: 'root',
-        password: '',
-        database: 'answerdb',
-        charset: 'utf8'
+        host: 'ec2-18-215-99-63.compute-1.amazonaws.com',
+        user: 'knlenrvicbsere',
+        password: '77adb80fec2be76bd02b5fbb2a93db733cea4a56c3a89c5c6700715db5032eae',
+        database: 'template1',
+        charset: 'utf8',
+        port: 5432
     }
 });
 
