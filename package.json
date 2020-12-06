@@ -27,6 +27,7 @@
     "knex": "^0.21.2",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1"
+    "pg":"^12.3"
   },
   "devDependencies": {
     "eslint": "^7.5.0"
